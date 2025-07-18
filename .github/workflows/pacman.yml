@@ -2,18 +2,15 @@ name: Generate Pac-Man Contribution Graph
 
 on:
   schedule:
-    - cron: "0 0 * * *" # roda todo dia à meia-noite
-  push:
-    branches:
-      - main
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
-  generate-pacman:
+  generate:
+    name: Generate contribution graph
     runs-on: ubuntu-latest
-    name: Generate snake animation
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Generate SVG
         uses: Platane/snk/svg-only@v3
@@ -23,10 +20,12 @@ jobs:
             ./output/pacman-contribution-graph.svg
             ./output/pacman-contribution-graph-dark.svg
 
-      - name: Commit & Push
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: github-actions
-          author_email: github-actions@github.com
-          message: "generated pacman contribution graph"
-          add: 'output/*.svg'
+      - name: Push to output branch
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git fetch
+          git checkout -B output
+          git add output/*.svg
+          git commit -m "update pacman graph" || echo "no changes"
+          git push origin output

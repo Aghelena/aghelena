@@ -56,7 +56,6 @@
   <img alt="Pacman graph" src="https://raw.githubusercontent.com/aghelena/aghelena/output/pacman-contribution-graph.svg">
 </picture>
 
-
 ###
 
 <div align="center">
