@@ -1,0 +1,32 @@
+name: Generate Pac-Man Contribution Graph
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # roda todo dia à meia-noite
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-pacman:
+    runs-on: ubuntu-latest
+    name: Generate snake animation
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Generate SVG
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: aghelena
+          outputs: |
+            ./output/pacman-contribution-graph.svg
+            ./output/pacman-contribution-graph-dark.svg
+
+      - name: Commit & Push
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: "generated pacman contribution graph"
+          add: 'output/*.svg'
