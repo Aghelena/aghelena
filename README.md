@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">✨ Inovação<br>📚 Professora de Inglês e Informática<br>🎯 Interessada em entrar, de fato,  na área de TI <br>🎲 Professora há 3 anos.</p>
+<p align="left">✨ Inovação<br>📚 Professora de Inglês e Informática<br>🎯 Interessada em entrar, de fato,  na área de TI <br>🎲 Professora há 2 anos.</p>
 
 ###
 
