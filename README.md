@@ -2,7 +2,7 @@
 
 ###
 
-<p align="left">Meu nome é Agnyh Helena, sou de Franca - SP<br>Sou quartoanista de Engenharia de Software no Uni-FACEF - Centro Universitário Municiapal de Franca</p>
+<p align="left">Meu nome é Agnyh Helena, sou de Franca - SP<br>Sou quartanista de Engenharia de Software no Uni-FACEF - Centro Universitário Municiapal de Franca</p>
 
 ###
 
